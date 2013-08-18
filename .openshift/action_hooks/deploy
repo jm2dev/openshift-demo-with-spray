@@ -9,9 +9,4 @@ else
   rm sbt.tgz
 fi
 
-cd $OPENSHIFT_REPO_DIR/spray-template
-SBT_PATH=$OPENSHIFT_DATA_DIR/sbt
-SBT_DIR=$OPENSHIFT_DATA_DIR/.sbt
-IVY_DIR=$OPENSHIFT_DATA_DIR/.ivy
-PATH=$OPENSHIFT_DATA_DIR/sbt/bin:$PATH
-sbt -sbt-dir $SBT_DIR -ivy $IVY_DIR assembly
+
