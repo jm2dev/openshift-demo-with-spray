@@ -10,5 +10,5 @@ else
 fi
 
 cd $OPENSHIFT_REPO_DIR/spray-template
-PATH=$OPENSHIFT_DATA_DIR/sbt:$PATH
+PATH=$OPENSHIFT_DATA_DIR/sbt/bin:$PATH
 sbt assembly
