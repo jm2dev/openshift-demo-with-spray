@@ -1,4 +1,6 @@
-#!/bin/sh
+#!/bin/bash
+cd $OPENSHIFT_DATA_DIR
+
 if [[ -d sbt ]]; then
   echo "SBT installed"
 else
@@ -6,3 +8,7 @@ else
   tar zxvf sbt.tgz sbt
   rm sbt.tgz
 fi
+
+cd $OPENSHIFT_REPO_DIR/spray-template
+PATH=$OPENSHIFT_DATA_DIR/sbt:$PATH
+sbt assembly

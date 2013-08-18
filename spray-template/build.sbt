@@ -1,3 +1,5 @@
+import AssemblyKeys._ // put this at the top of the file
+
 organization  := "com.example"
 
 version       := "0.1"
@@ -5,6 +7,8 @@ version       := "0.1"
 scalaVersion  := "2.10.2"
 
 scalacOptions := Seq("-unchecked", "-deprecation", "-encoding", "utf8")
+
+jarName in assembly := "spray-template-fat.jar"
 
 resolvers ++= Seq(
   "spray repo" at "http://repo.spray.io/"
@@ -20,3 +24,5 @@ libraryDependencies ++= Seq(
 )
 
 seq(Revolver.settings: _*)
+
+assemblySettings
