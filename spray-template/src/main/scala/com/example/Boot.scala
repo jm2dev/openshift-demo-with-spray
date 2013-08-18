@@ -13,5 +13,8 @@ object Boot extends App {
   val service = system.actorOf(Props[MyServiceActor], "demo-service")
 
   // start a new HTTP server on port 8080 with our service actor as the handler
-  IO(Http) ! Http.Bind(service, interface = "localhost", port = 8080)
+  val interface = Option(args(0)).getOrElse("localhost")
+  val port = Option(args(1)).getOrElse("8080").toInt
+
+  IO(Http) ! Http.Bind(service, interface = interface, port = port)
 }

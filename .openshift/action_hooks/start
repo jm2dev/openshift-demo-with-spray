@@ -3,4 +3,4 @@
 # script. The application will work only if it binds to
 # $OPENSHIFT_DIY_IP:8080
 cd $OPENSHIFT_REPO_DIR/spray-template
-nohup java -jar target/scala-2.10/spray-template-fat.jar > $OPENSHIFT_DIY_DIR/logs/server.log 2>&1 &
+nohup java -jar target/scala-2.10/spray-template-fat.jar $OPENSHIFT_DIY_IP $OPENSHIFT_DIY_PORT > $OPENSHIFT_DIY_DIR/logs/server.log 2>&1 &
